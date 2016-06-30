@@ -1,6 +1,11 @@
 <?php
 
-$file = fopen("texte.txt","r");
-var_dump(fread($file, filesize("texte.txt")));
+echo file_get_contents("texte.log");
+
+$file = fopen("texte.log", "w+");
+fwrite($file, date("Y-m-d H:i:s")." : le script a été ouvert\r\n");
+fclose($file);
+
+
 
 ?>
